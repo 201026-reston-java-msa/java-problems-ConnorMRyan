@@ -2,6 +2,8 @@
 
 ## Description
 
+##Connor Ryan, Checking that Git can commit correctly. 
+
 Revature is building a new API! This API contains methods for validating data, 
 solving problems, and encoding data. The API consists of 20 methods that you 
 must implement:
