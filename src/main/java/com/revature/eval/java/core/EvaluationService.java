@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 public class EvaluationService {
-
+	// FIXME: 10/27/20 
 	/**
 	 * 1. Without using the StringBuilder or StringBuffer class, write a method that
 	 * reverses a String. Example: reverse("example"); -> "elpmaxe"
@@ -14,8 +14,12 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String reverse(String string) {
+	String toReturn = "";
+	for(int i = string.length() - 1; i >= 0; i--){
+		toReturn = toReturn + string.charAt(i);
+	}
 		
-		return "";
+		return toReturn;
 	}
 
 	/**
@@ -96,7 +100,7 @@ public class EvaluationService {
 		}
 
 	}
-
+	// FIXME: 10/27/20 
 	/**
 	 * 4. Given a word, compute the scrabble score for that word.
 	 * 
@@ -114,7 +118,15 @@ public class EvaluationService {
 	 */
 	public int getScrabbleScore(String string) {
 		// TODO Write an implementation for this method declaration
-		return 0;
+
+		int[] letterPoints = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
+		int numpoints = 0;
+		for (int i = 0; i < string.length() ; i++) {
+			char toCheck = string.toUpperCase().charAt(i);
+			int ref = toCheck - 65;
+			numpoints += letterPoints[ref];
+		}
+		return numpoints;
 	}
 
 	/**
@@ -509,25 +521,25 @@ public class EvaluationService {
 	/**
 	 * 20. Parse and evaluate simple math word problems returning the answer as an
 	 * integer.
-	 * 
+	 *
 	 * Add two numbers together.
-	 * 
+	 *
 	 * What is 5 plus 13?
-	 * 
+	 *
 	 * 18
-	 * 
+	 *
 	 * Now, perform the other three operations.
-	 * 
+	 *
 	 * What is 7 minus 5?
-	 * 
+	 *
 	 * 2
-	 * 
+	 *
 	 * What is 6 multiplied by 4?
-	 * 
+	 *
 	 * 24
-	 * 
+	 *
 	 * What is 25 divided by 5?
-	 * 
+	 *
 	 * 5
 	 * 
 	 * @param string
